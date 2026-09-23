@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 
 @Injectable()
 export class IpBlockMiddleware implements NestMiddleware {
-  private readonly blacklist: string[] = ['::1', '127.0.0.1'];
+  private readonly blacklist: string[] = [];
 
   use(req: Request, res: Response, next: NextFunction) {
     const clientIp = req.ip as string;
